@@ -517,4 +517,14 @@ This solution covers:
 **Phase 4**	 Week 4	        Deploy Athena for secure querying and finalize documentation
 
 
+**My AWS Course Completion Badge**
+
+![image](https://github.com/user-attachments/assets/15157b0f-909a-416b-bbad-4ac1d5216e89)
+
+
+**My AWS Certificate of Completion**
+
+![image](https://github.com/user-attachments/assets/3c70dc66-676e-444a-8b95-5cd9f74dbfd3)
+
+
 
