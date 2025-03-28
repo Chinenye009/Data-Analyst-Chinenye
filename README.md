@@ -183,4 +183,113 @@ The Public Trees dataset of Vancouver City is the one used; fields like these ex
 
     •	AWS infrastructure map showing the whole pipeline
 
+**Diagnostic Data Analysis**
+
+**Figure 3**
+
+The Attached Image Depicts the Draw.io Design for Diagnostic Data Analysis for Vancouver City
+
+![image](https://github.com/user-attachments/assets/2f6871c8-25b4-4919-b0d2-e5df45c2fb20)
+
+**Project Title**
+
+Diagnostic Data Analysis for Public Trees of Vancouver City
+
+**Project Description**
+
+This project aims to do a public tree diagnostic data analysis for Vancouver. It seeks to go beyond "what happened" to investigate the causes behind changes in biodiversity across the city, planting trends, and tree health patterns. The project creates a strong and safe data pipeline using AWS cloud services to assist in the identification of the causes behind some data trends and anomalies noted in the urban forestry records of the city.
+
+**Objective**
+
+    •	To investigate underlying causes of observable trends in tree characteristics and distribution.
+
+    •	To explain why certain neighborhoods have fewer or more trees, species loss, or abnormal planting frequencies.
+
+    •	To help the city make better ecological, maintenance, and urban planning decisions.
+    
+**Background**
+
+The City of Vancouver maintains a comprehensive record of its public trees, but actionable insights into why specific tree trends exist are limited. Previous descriptive analyses show what has happened, but the need to explain the "why" (e.g., why certain species thrive or fail, or why planting frequency varies) is crucial for planning. Diagnostic analytics fills this gap.
+
+**Dataset**
+
+From the City of Vancouver’s public trees open dataset (used in earlier analyses), key fields include:
+
+    •	treeid, speciesname, commonname, genusname
+
+    •	diameter, height, heightrange
+
+    •	onstreet, neighbourhoodname, dateplanted, streetidname
+
+    •	Observations enriched with summarization and transformation layers
+
+**Methodology**
+
+**1.	Data Ingestion**
+
+    o	Raw data ingested to streets-raw-per via S3.
+    
+**2.	Data Cleaning and Transformation**
+
+    o	Cleaning via Glue DataBrew and Glue ETL jobs stored in publictrees-list-Trf.
+    
+    o	Outputs are stored in streets-trf-per.
+    
+**3.	Metadata Registration**
+
+    o	Metadata cataloged in streets-data-catalog-per for SQL-based querying.
+    
+**4.	Diagnostic Analysis**
+
+    o	Queries using AWS Athena identify:
+    
+            	Outlier tree measurements
+
+            	Sudden planting gaps
+
+            	Specific areas lacking diversity
+
+            	Correlations between tree health metrics and neighborhoods
+
+**5.	Summarization**
+
+    o	Aggregated diagnostics saved in PublicTrees-list-Summarization
+    
+    o	Final curated results go to streets-cur-per
+    
+**Tools and Technologies**
+
+    •	Amazon S3 – Staging (raw, transformed, curated data)
+    
+    •	AWS Glue – Data transformation and ETL
+    
+    •	Glue DataBrew – Data profiling and cleaning
+    
+    •	AWS Glue Catalog – Centralized metadata store
+    
+**Deliverables**
+
+    •	Full diagnostic report explaining trends (e.g., why certain species dominate or fail)
+
+    •	Dashboards and summary insights of tree planting causes, health, and anomalies
+
+    •	S3-structured data layers: raw, transformed, summarized, and curated
+
+    •	Glue job scripts and DataBrew profiles
+
+**Timeline**
+
+**Phase**	**Duration**	**Activities**
+
+**Phase 1**	     Week 1	        Ingest public tree dataset into S3 (raw)
+
+**Phase 2**	     Week 2	        Clean and transform using Glue & DataBrew
+
+**Phase 3**	     Week 3	        Register in Glue Catalog & run Athena queries
+
+**Phase 4**      Week 4	        Perform diagnostic analytics & summarize insights
+
+**Phase 5**	     Week 5	        Validate, secure, log, and finalize reporting
+
+
 
