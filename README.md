@@ -1,5 +1,8 @@
 # Data-Analyst-Chinenye
+
 **PROJECT 1 (CITY OF VANCOUVER)**
+
+**Exploratory Data Analysis**
 
 **Figure 1**
 
@@ -81,10 +84,103 @@ The Public Trees dataset of the City of Vancouver is the dataset used and has th
     
     • Aggregated metrics including:
     
-      o Total trees by neighborhoodname
+          o Total trees by neighborhoodname
       
-      o Average height and diameter by speciesname
+          o Average height and diameter by speciesname
       
-      o Tree distribution over planting decades
+          o Tree distribution over planting decades
       
     • Architecture diagrams documenting the data flow and processing logic
+
+
+**Descriptive Data Analysis**
+
+**Figure 2**
+
+The Attached Image Depicts the Draw.io Design for Descriptive Data Analysis for Vancouver City
+
+![image](https://github.com/user-attachments/assets/18beae49-5236-4fd6-9378-3f2716017246)
+
+**Project Title**
+
+Descriptive Data Analysis of the Public Trees in the City of Vancouver
+
+**Project Description**
+
+The main focus of this project is creating a scalable data pipeline that allows the City of Vancouver to examine public tree data both past and present. Descriptive insights based on tree species, planting site, height, diameter, and planting dates are sought to address "what happened." These revelations enable urban forestry stakeholders to make data-based decisions about resource allocation, biodiversity, and tree upkeep.
+
+**Objective**
+
+To create infographics and succinct descriptions reflecting:
+
+    •	The way different neighborhoods' tree species and genera are distributed.
+    
+    •	Trends in planting across time.
+    
+    •	Physical traits which include typical tree height and diameter.
+    
+    •	Typical tree species seen in several districts.
+    
+**Dataset**
+
+The Public Trees dataset of Vancouver City is the one used; fields like these exist:
+
+    •	treeid, civicnumber, neighbourhoodname, onstreet, stdstreet, onstreetblock, streetidname
+    
+    •	genusname, speciesname, commonname
+    
+    •	height, heightrange, diameter
+    
+    •	dateplanted
+    
+**Methodology**
+
+**1.	Data Ingestion**
+    
+        o	The raw tree dataset is first housed in the streets-raw-per S3 bucket.
+        
+**2.	Data Preparation and Transformation**
+
+        o	Using AWS Glue and Glue DataBrew, the publictrees-list-Trf job cleans and prepares the dataset standardizing missing or inconsistent entries.
+        
+**3.	Data Transformation Layer**
+    
+        o	Data that has been cleaned is transferred for structured storage and additional processing to the streets-trf-per bucket.
+        
+**4.	Metadata Management**
+    
+        o	The Glue Data Catalog registers the dataset using streets-data-catalog-per, so allowing smooth querying with Athena.
+        
+**5.	Descriptive Analysis & Summarization**
+    
+        o	PublicTrees-list-Summarization generates and stores summary outputs, that is, average height by species, most frequent trees by neighborhood, planting frequency by year).
+        
+**6.	Curated Data Layer**
+    
+        o	For use by dashboards, analysts, and stakeholders, final outputs are kept in the streets-cur-per bucket.
+        
+**Tools and Technologies**
+
+    •	Amazon S3 – For multi-layered data storage (raw, transformed, curated)
+
+    •	AWS Glue – ETL jobs and Glue Catalog for metadata
+
+    •	AWS Glue DataBrew – Visual data preparation
+
+**Deliverables**
+
+    •	Three S3 phases of cleaned, converted, and curated tree datasets
+
+    •	GLue's SQL-queryable data catalog
+
+    •	Descriptive measures and condensed analysis of ideas:
+
+        o	Typical tree height and width by genus and species.
+
+        o	Tree count in a neighborhood
+
+        o	Trend of tree planting throughout the years
+
+    •	AWS infrastructure map showing the whole pipeline
+
+
