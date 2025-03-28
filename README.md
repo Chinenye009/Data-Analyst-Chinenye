@@ -1,4 +1,7 @@
 # Data-Analyst-Chinenye
+PROJECT 1 (CITY OF VANCOUVER)
+Figure 1
+This Image Shows the Draw.io Design for the Exploratory Data Analysis for the City of Vancouver
 ![image](https://github.com/user-attachments/assets/6228ad27-f9d5-464b-870c-5bc052cb03ef)
 
 Project Title
