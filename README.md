@@ -2,6 +2,8 @@
 
 **PROJECT 1 (CITY OF VANCOUVER)**
 
+
+
 **Exploratory Data Analysis**
 
 **Figure 1**
@@ -93,6 +95,8 @@ The Public Trees dataset of the City of Vancouver is the dataset used and has th
     • Architecture diagrams documenting the data flow and processing logic
 
 
+
+
 **Descriptive Data Analysis**
 
 **Figure 2**
@@ -182,6 +186,8 @@ The Public Trees dataset of Vancouver City is the one used; fields like these ex
         o	Trend of tree planting throughout the years
 
     •	AWS infrastructure map showing the whole pipeline
+
+
 
 **Diagnostic Data Analysis**
 
@@ -290,6 +296,110 @@ From the City of Vancouver’s public trees open dataset (used in earlier analys
 **Phase 4**      Week 4	        Perform diagnostic analytics & summarize insights
 
 **Phase 5**	     Week 5	        Validate, secure, log, and finalize reporting
+
+
+
+**Data Wrangling Analysis**
+
+**Figure 4**
+
+This Image Shows the Draw.io Design for the Data Wrangling Analysis of the City of Vancouver
+
+![image](https://github.com/user-attachments/assets/e41a88c9-4404-4fb1-b7db-47f425d59481)
+
+**Project Title**
+
+Data Wrangling Analysis for the City of Vancouver’s Public Trees
+
+**Project Description**
+
+This project is focused on data wrangling, which involves cleaning, transforming, and enriching the City of Vancouver’s public tree dataset to prepare it for further analysis. The goal is to make raw, messy data usable for business intelligence and data science processes using AWS services like S3, Glue, and DataBrew.
+
+**Objective**
+
+    •	To clean and standardize the public trees dataset.
+    
+    •	To resolve inconsistencies, null values, data type mismatches, and schema errors.
+    
+    •	To transform the dataset into a ready-to-analyze, high-quality format stored in curated S3 buckets.
+    
+**Background**
+
+The City of Vancouver’s public tree data contains a wide variety of variables including species name, neighborhood, planting dates, height, and diameter. However, raw datasets often come with inconsistencies—missing fields, incorrect data types, and mixed formats—which can affect downstream analytics and reporting. This wrangling layer ensures the data is clean, consistent, and analysis-ready.
+
+**Dataset**
+
+The dataset includes attributes such as:
+
+    •	treeid, civcnumber, speciesname, genusname, commonname,
+    
+    •	diameter, height, height range,
+    
+    •	neighbourhoodname, onstreet, dateplanted, streetidname
+    
+    •	Stored initially in the streets-raw-per S3 bucket.
+    
+**Methodology**
+
+**1.	Raw Data Storage**
+
+    o	The dataset is first ingested into streets-raw-per on S3.
+    
+**2.	Cleaning with Glue DataBrew**
+
+    o	Data profiling and cleaning is done using AWS Glue DataBrew to:
+    
+        	Handle missing values
+        
+        	Standardize data formats
+        
+        	Detect and correct outliers
+        
+        	Create transformation recipes
+        
+**3.	Semi-Transformation Job (semi-job-Trf)**
+
+    o	A Glue ETL job applies semi-structured transformation logic and loads cleaned data into streets-trf-per.
+    
+**4.	Data Summarization**
+
+    o	Summary statistics are generated and stored in PublicTrees-list-Summarization.
+    
+**5.	Final Curated Data**
+
+    o	Final outputs are stored in streets-cur-per for downstream analytics or business reporting.
+    
+**Tools and Technologies**
+
+    •	Amazon S3 – Raw, transformed, and curated data layers
+    
+    •	AWS Glue DataBrew – No-code data cleaning, profiling, and transformations
+    
+    •	AWS Glue ETL Jobs – Python-based transformation and semi-structured processing
+    
+    •	AWS Glue Catalog (implied) – Schema registry and metadata management
+    
+**Deliverables**
+
+    •	Cleaned, transformed dataset in streets-cur-per
+    
+    •	Glue ETL scripts and DataBrew recipe artifacts
+    
+    •	Data profiling report showing cleaning actions and statistics
+    
+    •	Summarized version of the dataset for quick analysis
+    
+**Timeline**
+
+**Phase     Duration    	Activities**
+
+**Phase 1**	 Week 1	        Ingest and stage raw data in S3
+
+**Phase 2**	 Week 2	        Clean and profile data using Glue DataBrew
+
+**Phase 3**	 Week 3	        Run semi-job-Trf for transformation
+
+**Phase 4**	 Week 4	        Generate summaries and finalize curated dataset
 
 
 
