@@ -1,4 +1,5 @@
 # Data-Analyst-Chinenye
+![image](https://github.com/user-attachments/assets/6228ad27-f9d5-464b-870c-5bc052cb03ef)
 
 Project Title
 Public Tree Exploratory Data Analysis for Vancouver City
