@@ -402,4 +402,119 @@ The dataset includes attributes such as:
 **Phase 4**	 Week 4	        Generate summaries and finalize curated dataset
 
 
+**Data Quality Control and Security Analysis**
+
+**Figure 5**
+
+This Image Shows the Draw.io Design for the Data Quality Control and Security Analysis of the City of Vancouver
+
+![image](https://github.com/user-attachments/assets/9dfab219-1520-4bd9-9c57-a4a7fe55db07)
+
+**Project Title**
+
+Data Quality Control and Security for the City of Vancouver’s Public Trees
+
+**Project Description**
+
+This project implements a comprehensive data quality and security framework to ensure that the public trees dataset of Vancouver is accurate, reliable, and securely managed. It leverages AWS services to monitor, validate, encrypt, and audit data activities across the data lifecycle—from ingestion to querying.
+
+**Objective**
+
+    •	To validate the integrity and accuracy of the public trees data through automated quality checks.
+    
+    •	To ensure data protection using encryption (KMS keys) and auditing mechanisms (CloudTrail & CloudWatch).
+    
+    •	To enable secure access and analytics using SQL queries with Amazon Athena.
+
+**Background**
+
+The public dataset of Vancouver’s street trees is used for various public and city planning services. However, with increased use and exposure of this dataset, it becomes essential to ensure:
+
+    •	The data is trustworthy (quality control),
+    
+    •	Access is secure and traceable (audit),
+    
+    •	Sensitive fields are encrypted at rest (security),
+    
+    •	Failures or anomalies are automatically detected (monitoring).
+
+**Scope**
+
+This solution covers:
+
+    •	Data quality verification using AWS Glue and Data Quality jobs
+    
+    •	Storage encryption using AWS KMS (with a custom key: Strts-Pubtre-Key-Per)
+    
+    •	Querying and access control via Athena and S3
+    
+    •	Auditing and monitoring using CloudTrail and CloudWatch
+
+**Methodology**
+
+**1.	Data Validation**
+
+    o	Strts-Pubtre-QC-Per performs data quality checks on the raw and transformed data using AWS Glue Data Quality rules.
+    
+    o	Results are stored in curated S3 buckets.
+    
+**2.	Secure Transformation and Cataloging**
+
+    o	AWS Glue jobs handle secure ETL transformations.
+    
+    o	Metadata is maintained in Streets-data-catalog-per.
+    
+**3.	Encryption Setup**
+
+    o	AWS KMS with custom key alias Strts-Pubtre-Key-Per is used to encrypt S3 bucket data at rest.
+    
+**4.	Auditing & Monitoring**
+
+    o	CloudTrail (Strts-Pubtre-tra-Per) tracks API activity.
+    
+    o	CloudWatch (Strts-Pubtre-MCR-Per) monitors metrics like resource usage and storage size.
+    
+**5.	Query Interface**
+
+    o	Amazon Athena provides SQL-based access to validated and encrypted data stored in S3.
+
+**Tools and Technologies**
+
+    •	Amazon S3 – Data lake storage (raw, transformed, curated)
+    
+    •	AWS Glue – ETL, cataloging, and data quality jobs
+    
+    •	AWS Glue Data Quality – Profile and validate datasets
+    
+    •	AWS KMS – Encryption key management (custom-managed key)
+    
+    •	Amazon Athena – Serverless SQL query access
+    
+    •	AWS CloudTrail – Security audit trail of API activities
+    
+    •	Amazon CloudWatch – Metric monitoring and alerting
+
+**Deliverables**
+
+    •	Encrypted and validated public trees dataset stored securely
+    
+    •	Glue data quality reports and data catalog metadata
+    
+    •	Audit logs (CloudTrail) and metric dashboards (CloudWatch)
+    
+    •	SQL query access via Athena for secure analysis
+
+**Timeline**
+
+**Phase	    Duration	    Activities**
+
+**Phase 1**  Week 1	        Configure KMS keys and encrypt S3 buckets
+
+**Phase 2**	 Week 2	        Build Glue data quality jobs and validate datasets
+
+**Phase 3**	 Week 3	        Set up CloudTrail & CloudWatch for monitoring and logging
+
+**Phase 4**	 Week 4	        Deploy Athena for secure querying and finalize documentation
+
+
 
